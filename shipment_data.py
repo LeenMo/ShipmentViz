@@ -32,7 +32,7 @@ from PIL import Image #for images
 st.set_page_config(layout="wide")
 @st.cache(persist=True)
 def load_data():
-    data = pd.read_csv('C:/Users/Leen/Documents/AUB MSBA Spring 2021/MSBA 370- Data Driven Digital Marketing/Streamlit Project/shipment/shipment.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/LeenMo/ShipmentViz/main/shipment.csv')
     data.rename(columns={'Reached.on.Time_Y.N': 'On_time'}, inplace=True)
     data.loc[(data['Discount_offered']<5), 'Discount_offered']=0
     return data
